@@ -1,8 +1,22 @@
+.gantt_task_row {
+    /*height: 30px !important;*/
+}
+
+.gantt_task_cell {
+    border: initial;
+}
+
+.gantt_task .gantt_task_scale .gantt_scale_cell {
+	/*width: 30px !important;*/
+}
+
 .gantt_task_line {
     border: 0 none;
     border-color: #5fa2dd;
     background-color: #5fa2dd;
     height: 24px !important;
+    margin-top: 3px;
+    line-height: 24px !important;
 }
 
 .gantt_task_line.gantt_selected {
@@ -30,4 +44,104 @@
 .gantt_line_wrapper .gantt_link_line_down,
 .gantt_line_wrapper .gantt_link_line_top {
 	width: 1px !important;	
+}
+
+.gantt_tooltip {
+	color: #fff;
+    border-radius: 5px;
+    background-color: #454545;
+}
+
+
+/* TreeView */
+.gantt_tree_icon.gantt_open {
+	background-image: url("../imgs/dhxmenu_material/imgs_tree/plus.gif");
+}
+.gantt_tree_icon.gantt_close {
+	background-image: url("../imgs/dhxmenu_material/imgs_tree/minus.gif");
+}
+.gantt_tree_icon.gantt_folder_closed {
+	background-image: url("../imgs/dhxmenu_material/imgs_tree/folderClosed.gif");
+}
+
+.gantt_tree_icon.gantt_folder_open {
+	background-image: url("../imgs/dhxmenu_material/imgs_tree/folderOpen.gif");
+}
+
+.gantt_tree_icon.gantt_file {
+	background-image: none;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: #5fa2dd;
+    margin-top: 12px;
+    margin-right: 10px;
+}
+
+
+/* Progress Value */
+.gantt_task_progress span{
+	color: #FFF;
+	z-index: 20;
+    float: right;
+    line-height: 26px;
+    padding-right: 6px;
+}
+
+
+/* Sort */
+.gantt_grid_head_cell .gantt_sort {
+	right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Project */
+.gantt_task_line.gantt-parenttask-bar {
+    background-color: #34d075;
+    border-color: #34d075;
+    border-width: 0;
+    box-shadow: 1px 1px 2px rgba(150, 150, 150, 0.3);
+    height: 12px !important;
+    line-height: 7px;
+    /*position: relative;*/
+}
+
+.gantt_task_line.gantt-parenttask-bar .gantt_task_progress{
+	background-color: #80edc4;
+}
+
+/* Project Arrow */
+.gantt_task_line.gantt-parenttask-bar.gantt_dependent_task:after {
+    content: " ";
+    border: 0;
+    height: 0;
+    width: 0;
+    border-width: 8px 8px 0 0;
+    border-color: inherit;
+    border-left-color: transparent !important;
+    border-right-color: transparent !important;
+    border-style: solid;
+    
+}
+
+.gantt_task_line.gantt-parenttask-bar.gantt_dependent_task:before {
+    content: " ";
+    border: 0;
+    height: 0;
+    width: 0;
+    border-width: 8px 0 0 8px;
+    border-color: inherit;
+    border-left-color: transparent !important;
+    border-right-color: transparent !important;
+    border-style: solid;
+    float: right;
+    margin-top: 12px;
+}
+
+.gantt_side_content.gantt_left {
+	color: #888;
+	bottom: 0;
+    font-size: 12px;
+    padding-right: 30px;
 }

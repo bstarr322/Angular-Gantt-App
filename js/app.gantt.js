@@ -15,13 +15,14 @@ app.directive('dhxGantt', function() {
         gantt.parse(collection, "json");
       }, true);
 
-      //size of gantt
+      //Size of gantt
       $scope.$watch(function() {
         return $element[0].offsetWidth + "." + $element[0].offsetHeight;
       }, function() {
         gantt.setSizes();
       });
 
+      // Scale Configuration
       gantt.config.scale_unit = "month";
       gantt.config.step = 1;
       gantt.config.date_scale = "%F, %Y";
@@ -31,7 +32,6 @@ app.directive('dhxGantt', function() {
 
       var weekScaleTemplate = function(date){
         var dateToStr = gantt.date.date_to_str("%D %d %M %Y");
-        // var endDate = gantt.date.add(gantt.date.add(date, 1, "week"), -1, "day");
         return dateToStr(date);
       };
 
@@ -40,8 +40,59 @@ app.directive('dhxGantt', function() {
         {unit:"day", step:1, date:"%D" }
       ];
 
+      // Enable Sort
+      gantt.config.sort = true; 
+
+      // Right side & Left side Text
+      gantt.templates.rightside_text = function(start, end, task){
+        if(task.type == gantt.config.types.milestone){
+          return task.text;
+        }
+        return "";
+      };
+
+      gantt.templates.leftside_text = function(start, end, task){
+        if(task.type != gantt.config.types.milestone){
+          return task.text;
+        }
+         return "";
+      };
+
+      //Show Progress Text for only Task, not Project & Milestones.
+      gantt.templates.progress_text = function(start, end, task){
+        if (task.type != gantt.config.types.project) {
+          return "<span>"+Math.round(task.progress*100)+ "% </span>";
+        } else {
+          return "";
+        }
+      };
+
+      // Don't show Task text in task 
+      gantt.templates.task_text = function(start, end, task){
+          return "";
+      };
+
+      gantt.templates.task_class = function(start, end, task){
+          if(task.type == gantt.config.types.project){
+              return "gantt-parenttask-bar";
+          }
+          return "";
+      };
+
+      // Lightbox
+      gantt.config.lightbox.sections = [
+        {name: "description", height: 70, map_to: "text", type: "textarea", focus: true},
+        {name: "type", type: "typeselect", map_to: "type"},
+        {name: "time", type: "duration", map_to: "auto"}
+      ];
+
       //init gantt
       gantt.init($element[0]);
+
+      // Tree View
+      // myTree = new dhtmlXTreeObject("treeboxbox_tree0","100%","100%",0);
+      // myTree.setImagePath("../../../skins/web/imgs/dhxtree_web/");
+      // myTree.load("../common/tree.xml");
     }
   };
 });
