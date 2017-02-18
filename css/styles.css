@@ -1,0 +1,33 @@
+.gantt_task_line {
+    border: 0 none;
+    border-color: #5fa2dd;
+    background-color: #5fa2dd;
+    height: 24px !important;
+}
+
+.gantt_task_line.gantt_selected {
+	box-shadow: initial;
+}
+
+.gantt_task_line .gantt_task_content{
+	font-size: 10px;
+	line-height: 24px;
+}
+
+.gantt_task_progress {
+	background-color: #87bceb;
+}
+
+.gantt_line_wrapper div {
+	background-color: #5fa2dd;
+}
+
+.gantt_line_wrapper .gantt_link_line_left,
+.gantt_line_wrapper .gantt_link_line_right {
+	height: 1px !important;
+}
+
+.gantt_line_wrapper .gantt_link_line_down,
+.gantt_line_wrapper .gantt_link_line_top {
+	width: 1px !important;	
+}
