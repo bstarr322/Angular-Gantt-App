@@ -34,7 +34,8 @@ app.controller('MainGanttCtrl', function($scope) {
             {"id":21, "text":"Task #4.1", "start_date":"03-04-2013", "duration":"4", "parent":"15", "progress": 0.5, "open": true},
             {"id":22, "text":"Task #4.2", "start_date":"03-04-2013", "duration":"4", "parent":"15", "progress": 0.1, "open": true},
             {"id":23, "text":"Task #4.3", "start_date":"03-04-2013", "duration":"5", "parent":"15", "progress": 0, "open": true},
-            {"id":24, "text":"Mediate milestone", "start_date":"14-04-2013", type:gantt.config.types.milestone, "parent":"15", "progress": 0, "open": true}
+            {"id":24, "text":"Mediate milestone", "start_date":"18-04-2013", type:gantt.config.types.milestone, "parent":"15", "open": true},
+            {"id":25, "text":"Final milestone", "start_date":"19-04-2013", type:gantt.config.types.milestone, "parent":"11", "open": true}
         ],
         links:[
             {"id":"1","source":"1","target":"2","type":"1"},
@@ -60,5 +61,6 @@ app.controller('MainGanttCtrl', function($scope) {
             {"id":"21","source":"15","target":"23","type":"2"},
             {"id":"22","source":"24","target":"19","type":"0"},
             {"id":"23","source":"3","target":"24","type":"0"},
+            {"id":"24","source":"24","target":"25","type":"0"},
     ]};
 });
