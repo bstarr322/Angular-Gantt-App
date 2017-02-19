@@ -105,7 +105,7 @@
 }
 
 /* Project Arrow */
-.gantt_task_line.gantt-parenttask-bar.gantt_dependent_task:after {
+.gantt_task_line.gantt-parenttask-bar:after {
     content: " ";
     border: 0;
     height: 0;
@@ -118,7 +118,7 @@
     float: left;
 }
 
-.gantt_task_line.gantt-parenttask-bar.gantt_dependent_task:before {
+.gantt_task_line.gantt-parenttask-bar:before {
     content: " ";
     border: 0;
     height: 0;
