@@ -1,13 +1,6 @@
-.gantt_task_row {
-    /*height: 30px !important;*/
-}
 
 .gantt_task_cell {
     border: initial;
-}
-
-.gantt_task .gantt_task_scale .gantt_scale_cell {
-	/*width: 30px !important;*/
 }
 
 .gantt_task_line {
@@ -98,13 +91,13 @@
 
 /* Project */
 .gantt_task_line.gantt-parenttask-bar {
+
     background-color: #34d075;
     border-color: #34d075;
     border-width: 0;
     box-shadow: 1px 1px 2px rgba(150, 150, 150, 0.3);
     height: 12px !important;
-    line-height: 7px;
-    /*position: relative;*/
+    line-height: initial !important;
 }
 
 .gantt_task_line.gantt-parenttask-bar .gantt_task_progress{
@@ -122,7 +115,7 @@
     border-left-color: transparent !important;
     border-right-color: transparent !important;
     border-style: solid;
-    
+    float: left;
 }
 
 .gantt_task_line.gantt-parenttask-bar.gantt_dependent_task:before {
@@ -136,7 +129,7 @@
     border-right-color: transparent !important;
     border-style: solid;
     float: right;
-    margin-top: 12px;
+    margin-top: 11px;
 }
 
 .gantt_side_content.gantt_left {
@@ -144,4 +137,7 @@
 	bottom: 0;
     font-size: 12px;
     padding-right: 30px;
+}
+.gantt-parenttask-bar .gantt_side_content.gantt_left {
+    bottom: -5px;
 }
