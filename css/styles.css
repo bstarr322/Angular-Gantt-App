@@ -140,6 +140,7 @@
 	bottom: 0;
     font-size: 12px;
     padding-right: 30px;
+    font-weight: 600;
 }
 .gantt-parenttask-bar .gantt_side_content.gantt_left {
     bottom: -5px;
