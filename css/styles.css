@@ -1,4 +1,7 @@
 
+.gantt_task {
+    overflow-x: visible;
+}
 .gantt_task_cell {
     border: initial;
 }
@@ -140,4 +143,8 @@
 }
 .gantt-parenttask-bar .gantt_side_content.gantt_left {
     bottom: -5px;
+}
+
+.gantt_hor_scroll {
+    display: none !important;
 }

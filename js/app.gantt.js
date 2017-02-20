@@ -1,6 +1,6 @@
 (function(){
 
-app.directive('dhxGantt', function() {
+app.directive('dhxGantt', ['$window', function ($window) {
   return {
     restrict: 'A',
     scope: false,
@@ -88,16 +88,25 @@ app.directive('dhxGantt', function() {
         {name: "time", type: "duration", map_to: "auto"}
       ];
 
-      //init gantt
+      //init Gantt
       gantt.init($element[0]);
 
+      // Init Gantt Again when do resize 
+      angular.element($window).bind('resize', function(){
+
+        $scope.width = $window.innerWidth;
+        // manuall $digest required as resize event
+        // is outside of angular
+        $scope.$digest();
+        gantt.init($element[0]);
+      });
       // Tree View
       // myTree = new dhtmlXTreeObject("treeboxbox_tree0","100%","100%",0);
       // myTree.setImagePath("../../../skins/web/imgs/dhxtree_web/");
       // myTree.load("../common/tree.xml");
     }
   };
-});
+}]);
 
 
 function templateHelper($element){
@@ -118,10 +127,6 @@ app.directive('ganttTemplate', ['$filter', function($filter){
     terminal:true,
    
     link:function($scope, $element, $attrs, $controller){
-      console.log($scope);
-      console.log($element);
-      console.log($attrs);
-      console.log($controller);
       var template =  Function('sd','ed','task', 'return "'+templateHelper($element)+'"');
       gantt.templates[$attrs.ganttTemplate] = template;
     }
