@@ -43,6 +43,8 @@ app.directive('dhxGantt', function() {
       // Enable Sort
       gantt.config.sort = true; 
 
+      // gantt.config.autosize = "x";
+
       // Right side & Left side Text
       gantt.templates.rightside_text = function(start, end, task){
         if(task.type == gantt.config.types.milestone){
@@ -75,8 +77,6 @@ app.directive('dhxGantt', function() {
       gantt.templates.task_class = function(start, end, task){
           if(task.type == gantt.config.types.project){
               return "gantt-parenttask-bar";
-          } else if(task.type == gantt.config.types.milestone){
-              return "gantt_milestone";
           }
           return "";
       };
