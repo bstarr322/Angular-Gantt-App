@@ -102,7 +102,9 @@
     height: 12px !important;
     line-height: initial !important;
 }
-
+.gantt_task_line.gantt-parenttask-bar .gantt_task_content{
+    display: none;
+}
 .gantt_task_line.gantt-parenttask-bar .gantt_task_progress{
 	background-color: #80edc4;
 }
@@ -148,4 +150,13 @@
 
 .gantt_hor_scroll {
     display: none !important;
+}
+.gantt_cal_cover {
+    opacity: 0.75;
+}
+
+.gantt_cal_light {
+    border-radius: initial;
+}
+.gantt_cal_ltitle {
 }

@@ -46,19 +46,19 @@ app.directive('dhxGantt', ['$window', function ($window) {
       // gantt.config.autosize = "x";
 
       // Right side & Left side Text
-      gantt.templates.rightside_text = function(start, end, task){
-        if(task.type == gantt.config.types.milestone){
-          return task.text;
-        }
-        return "";
-      };
+      // gantt.templates.rightside_text = function(start, end, task){
+      //   if(task.type == gantt.config.types.milestone){
+      //     return task.text;
+      //   }
+      //   return "";
+      // };
 
-      gantt.templates.leftside_text = function(start, end, task){
-        if(task.type != gantt.config.types.milestone){
-          return task.text;
-        }
-         return "";
-      };
+      // gantt.templates.leftside_text = function(start, end, task){
+      //   if(task.type != gantt.config.types.milestone){
+      //     return task.text;
+      //   }
+      //    return "";
+      // };
 
       //Show Progress Text for only Task, not Project & Milestones.
       gantt.templates.progress_text = function(start, end, task){
@@ -70,9 +70,9 @@ app.directive('dhxGantt', ['$window', function ($window) {
       };
 
       // Don't show Task text in task 
-      gantt.templates.task_text = function(start, end, task){
-          return "";
-      };
+      // gantt.templates.task_text = function(start, end, task){
+      //     return "";
+      // };
 
       gantt.templates.task_class = function(start, end, task){
           if(task.type == gantt.config.types.project){
